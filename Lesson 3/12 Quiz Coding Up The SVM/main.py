@@ -1,5 +1,5 @@
 import sys
-from class_vis import prettyPicture
+from class_vis import prettyPicture, output_image
 from prep_terrain_data import makeTerrainData
 
 import matplotlib.pyplot as plt
@@ -26,7 +26,8 @@ clf.fit(features_train, labels_train)
 #### store your predictions in a list named pred
 pred = clf.predict(features_test)
 
-
+prettyPicture(clf, features_test, labels_test)
+output_image("test.png", "png", open("test.png", "rb").read())
 
 
 from sklearn.metrics import accuracy_score
